@@ -1,0 +1,89 @@
+$date
+	Sun Jan 15 21:20:38 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module ADD_half $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # c_out $end
+$var wire 1 $ sum $end
+$upscope $end
+$scope module t_Add $end
+$var wire 1 % sum $end
+$var wire 1 & c_out $end
+$var reg 1 ' a $end
+$var reg 1 ( b $end
+$var reg 1 ) cin $end
+$scope module M1 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 & c_out $end
+$var wire 1 ) cin $end
+$var wire 1 * w3 $end
+$var wire 1 + w2 $end
+$var wire 1 , w1 $end
+$var wire 1 % sum $end
+$scope module M1 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 + cout $end
+$var wire 1 , sum $end
+$upscope $end
+$scope module M2 $end
+$var wire 1 ) a $end
+$var wire 1 , b $end
+$var wire 1 * cout $end
+$var wire 1 % sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x,
+x+
+x*
+x)
+x(
+x'
+x&
+x%
+x$
+x#
+z"
+z!
+$end
+#10
+0&
+1%
+0*
+0,
+0+
+1)
+0(
+0'
+#20
+1&
+0%
+1*
+1,
+1(
+#30
+1%
+0*
+0,
+1+
+1'
+#40
+0%
+1*
+1&
+1,
+0+
+0(
+#100
