@@ -19,21 +19,9 @@ always @(posedge enable  or negedge rst) begin
     {temp_cin,low_bit_sum}<=a[3:0]+b[3:0]+cin; 
     temp_a <= a[7:4];
     temp_b <= b[7:4];
-    // {cout,sum[7:4]}<=temp_a+temp_b+temp_cin;
-    // {cout,high_bit_sum}<=temp_a+temp_b+temp_cin;
-    // sum[3:0]<=low_bit_sum; 
-    end
-end
-always @( posedge  enable or negedge rst) begin
-    if (~rst) begin
-     sum=0;
-     cout=0;   
-    end
-    else begin
     {cout,sum[7:4]}<=temp_a+temp_b+temp_cin;
     {cout,high_bit_sum}<=temp_a+temp_b+temp_cin;
     sum[3:0]<=low_bit_sum; 
     end
 end
-
 endmodule
