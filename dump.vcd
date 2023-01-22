@@ -1,5 +1,5 @@
 $date
-	Sun Jan 22 17:51:42 2023
+	Sun Jan 22 19:21:04 2023
 $end
 $version
 	Icarus Verilog
@@ -7,105 +7,151 @@ $end
 $timescale
 	1s
 $end
-$scope module t_shifter $end
-$var wire 1 ! A $end
-$var reg 1 " E $end
-$var reg 1 # clk $end
-$var reg 1 $ rst $end
-$scope module M1 $end
-$var wire 1 " E $end
-$var wire 1 # clk $end
-$var wire 1 $ rst $end
-$var reg 1 ! A $end
-$var reg 1 % B $end
-$var reg 1 & C $end
-$var reg 1 ' D $end
+$scope module tb_8_bitadder $end
+$var wire 8 ! sum [7:0] $end
+$var wire 1 " cout $end
+$var reg 8 # a [7:0] $end
+$var reg 8 $ b [7:0] $end
+$var reg 1 % cin $end
+$var reg 1 & enable $end
+$var reg 1 ' rst $end
+$scope module m1 $end
+$var wire 8 ( a [7:0] $end
+$var wire 8 ) b [7:0] $end
+$var wire 1 % cin $end
+$var wire 1 & enable $end
+$var wire 1 ' rst $end
+$var reg 1 " cout $end
+$var reg 4 * high_bit_sum [3:0] $end
+$var reg 4 + low_bit_sum [3:0] $end
+$var reg 8 , sum [7:0] $end
+$var reg 4 - temp_a [3:0] $end
+$var reg 4 . temp_b [3:0] $end
+$var reg 1 / temp_cin $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+x/
+bx .
+bx -
+bx ,
+bx +
+bx *
+bx )
+bx (
 x'
-x&
+0&
 x%
-x$
-0#
+bx $
+bx #
 x"
-x!
+bx !
 $end
 #10
-0'
-0$
-0"
-1#
+b0 .
+b0 -
+0/
+b0 +
+1'
+0%
+b0 $
+b0 )
+b0 #
+b0 (
+1&
 #20
-1"
-0#
+0&
 #30
-1'
-0&
-1#
+b0 *
+0"
+b0 !
+b0 ,
+b10 +
+1&
+b1 $
+b1 )
+b1 #
+b1 (
 #40
-0"
-0#
+0&
 #50
-0'
+b1 .
+b1 -
+b1001 +
+b10 !
+b10 ,
 1&
-0%
-1#
+1%
+b10100 $
+b10100 )
+b10100 #
+b10100 (
 #60
-1"
-0#
+0&
 #70
-1'
-0&
-1%
-0!
-1#
+b10 *
+b101001 !
+b101001 ,
+b100 .
+b100 -
+1/
+b111 +
+1&
+b1001011 $
+b1001011 )
+b1001011 #
+b1001011 (
 #80
-0#
+0&
 #90
-0'
+b1000 .
+b1000 -
+0/
+b0 +
+b1001 *
+b10010111 !
+b10010111 ,
 1&
 0%
-1!
-0"
-1#
+b10000000 $
+b10000000 )
+b10000000 #
+b10000000 (
 #100
-0#
+0&
 #110
-0&
-1%
-0!
-1#
-#120
-0#
-#130
-1'
-0%
-1!
+b0 *
 1"
-1#
-#140
-0#
-#150
-0'
+b0 !
+b0 ,
+b1100 .
+b1100 -
+1/
 1&
-0!
-0"
-1#
-#160
-1"
-0#
-#170
+b11001000 $
+b11001000 )
+b11001000 #
+b11001000 (
+#120
 0&
-1$
-0"
-1#
+#130
+b1001 *
+b10010000 !
+b10010000 ,
+1&
+#140
+0&
+#150
+1&
+#160
+0&
+#170
+1&
 #180
-0$
-0#
+0&
 #190
-1#
+1&
 #200
-0#
+0&
