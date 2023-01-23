@@ -7,7 +7,7 @@ I use iverilog + gtkwave as the basic simulation for tesetbench, and DesignCompi
 # Root directory
 The verilog codes in the root directory are the basic training of coding, such as DFF, latch,multiplexer,etc.
 
-#Testbench 
+# Testbench 
 Prefix "tb" means the testbench of corresponding design, almost every design has a verifid testbench.
 
 # Synthesizable_verilog
