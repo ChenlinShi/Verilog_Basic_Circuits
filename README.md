@@ -14,7 +14,7 @@ The cell library I use for Logic Synthesis is CNFET7, an Open-source cell librar
 URL:https://github.com/uec-hpc-lab/CNFET-OCL
 
 # Gate_netlist
-The gate netlist that Designcompiler output,
+The gate netlist that DesignCompiler output,
 by using commmad:
 
 write -format verilog -output /path
