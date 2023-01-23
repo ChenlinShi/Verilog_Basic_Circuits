@@ -15,3 +15,7 @@ URL:https://github.com/uec-hpc-lab/CNFET-OCL
 
 # Gate_netlist
 The gate netlist that Designcompiler output.
+
+# Tools
+I used iverilog + gtkwave as the basic simulation for tesetbench.
+

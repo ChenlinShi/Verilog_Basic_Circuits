@@ -3,7 +3,8 @@ module tb_8_bitadder ();
 reg [7:0] a,b;
 output [7:0] sum;
 output  cout;
- reg cin,rst,enable;
+reg cin;
+reg rst,enable;
 parameter delay=80; 
 pipeline_8bit_adder m1(enable,rst,a,b,cin,cout,sum);
 

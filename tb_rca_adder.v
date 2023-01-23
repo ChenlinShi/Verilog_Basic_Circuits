@@ -1,0 +1,39 @@
+module tb_rca_bitadder ();
+
+reg [7:0] a,b;
+output [7:0] sum;
+output  cout;
+reg rst,clk;
+reg cin;
+parameter delay=140; 
+eight_bit_adder m1(a,b,cin,cout,sum,clk,rst);
+
+initial begin
+   $dumpfile("dump.vcd"); 
+   $dumpvars;
+end
+
+initial begin
+  clk=0;
+     forever #10 clk = ~clk;  
+end 
+initial begin                                                  
+#10a=32;b=32;cin=1'b0; rst=1;                
+// #delay a=1;b=1;
+// #delay a=20;b=20;cin=0;
+// #delay a=75;b=75;cin=0;
+// #delay a=128;b=128;cin=0;
+// #delay a=200;b=200;cin=0;                                                                                 
+end 
+// initial begin
+//   clk=0;
+//      forever #10 clk = ~clk;  
+// end 
+
+
+initial begin 
+    #1000 $finish;
+end
+
+
+endmodule
