@@ -1,8 +1,14 @@
 # Verilog_study
 Basic circuits written in Verilog
 
+# Tools
+I use iverilog + gtkwave as the basic simulation for tesetbench, and DesignCompiler for synthesis.
+
 # Root directory
 The verilog codes in the root directory are the basic training of coding, such as DFF, latch,multiplexer,etc.
+
+#Testbench 
+Prefix "tb" means the testbench of corresponding design, almost every design has a verifid testbench.
 
 # Synthesizable_verilog
 Files in "./synthesizable_verilog" are some a little complex deisgns selected to do logic synthesis based on DesignCompiler.
@@ -19,5 +25,4 @@ by using commmad:
 
 write -format verilog -output /path
   
-# Tools
-I use iverilog + gtkwave as the basic simulation for tesetbench.
+
