@@ -13,7 +13,7 @@ Prefix "tb" means the testbench of corresponding design, almost every design has
 # Synthesizable_verilog
 Files in "./synthesizable_verilog" are some a little complex deisgns selected to do logic synthesis based on DesignCompiler.
 
-Each file in "./synthesizable_verilog" is successfully synthesized.
+Each file in "./synthesizable_verilog" can be successfully synthesized with DesignCompiler version of R2020.
 
 PS: Some codes are changed slightly in structure in order to be implemented logic synthesis.
 
