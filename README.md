@@ -1,4 +1,4 @@
-# Verilog_study
+# Verilog_Basic_Circuits
 Basic circuits written in Verilog
 
 # Tools
