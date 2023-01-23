@@ -17,7 +17,7 @@ URL:https://github.com/uec-hpc-lab/CNFET-OCL
 The gate netlist that Designcompiler output,
 by using commmad:
 
-write -format verilog -output "<path>"
+write -format verilog -output /path
   
 # Tools
 I use iverilog + gtkwave as the basic simulation for tesetbench.
