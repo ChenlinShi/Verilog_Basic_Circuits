@@ -29,3 +29,7 @@ write -format verilog -output /path
 
 # Single Cycle CPU
 There is a directory named "single_cycle_cpu", which is my attempt to design a simple CPU based on the information from internet. 
+
+In this directory, it includes that the verilog code and verified testbench codes of each unit.
+
+
