@@ -57,7 +57,3 @@ ADD_half_nogate M2(w3,sum,cin,w1);
 assign c_out=w3||w2;
     
 endmodule
-
-PC pc(Clk,Reset,Result,Addr);
-PCadd4 pcadd4(Addr,PCadd4);
-INSTMEM instmem(Addr,Inst);

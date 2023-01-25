@@ -7,7 +7,7 @@ module Instruction_mem(
     );
     
       wire [31:0] inst_mem [15:0]; // 32 bit for single instruction, 16 instructions is maximum for this memory.
-      assign   inst_mem[0 ] = {6'b001000,5'd0,5'd1,16'd1};// addi, rs=0, rt=1, imm=1          => R[1]=1
+      assign   inst_mem[0 ] = {6'b001000,5'd0,5'd1,16'd1};// addi, rs=0, rd=1, imm=1          => R[1]=1
       assign   inst_mem[1 ] = {6'b000000,5'd0,5'd1,5'd2,5'd0,6'b100000}; // add, rs=0, rt=1, rd=2            => R[2]=1
       assign   inst_mem[2 ] = {6'b000000,5'd0,5'd1,5'd3,5'd0,6'b100010}; // sub, rs=0, rt=1, rd=3            => R[3]=-1
       assign   inst_mem[3 ] = {6'b001101,5'd1,5'd4,16'd2};   // ori, rs=1, rt=4, imm=2           => R[4]=3
