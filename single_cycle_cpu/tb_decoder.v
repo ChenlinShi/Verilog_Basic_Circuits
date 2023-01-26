@@ -4,9 +4,9 @@ module tb_decoder (
 reg [5:0]op;
 reg [3:0]func;
 wire [2:0]alu_func;
-wire ram_write,ram_load,jump;
+wire ram_write,ram_load,jump,imm_enable;
 
-decoder u1 (op,func,alu_func,ram_load,ram_write,jump);
+decoder u1 (op,func,alu_func,ram_load,ram_write,jump,imm_enable);
 
 initial begin
    $dumpfile("dump.vcd"); 
