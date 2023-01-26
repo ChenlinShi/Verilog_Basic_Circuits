@@ -30,6 +30,29 @@ write -format verilog -output /path
 # Single Cycle CPU
 There is a directory named "single_cycle_cpu", which is my attempt to design a simple CPU based on the information from internet. 
 
-In this directory, it includes that the verilog codes and verified testbench codes of each unit.
+In this directory, it includes the verilog codes and verified testbench codes of each unit.
+
+The Simple CPU has and wiil have the following components:
+
+An Alu: for  + - & |;
+
+A 32bit_Ripple adder;
+
+A program counter;
+
+A program counter adder;
+
+An instruction decoder;
+
+An instrution memory for test : 32bit MIPS ISA;
+
+An Data memory(RAM): for sw and lw instructin;
+
+A control unit;
+
+...
+
+
+
 
 
