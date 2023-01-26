@@ -46,7 +46,7 @@ An instruction decoder;
 
 An instrution memory for test : 32bit MIPS ISA;
 
-An Data memory(RAM): for sw and lw instructin;
+A Data memory(RAM): for sw and lw instructin;
 
 A control unit;
 
