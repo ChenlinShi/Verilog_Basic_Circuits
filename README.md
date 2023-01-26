@@ -40,7 +40,7 @@ A 32bit_Ripple adder;
 
 A program counter;
 
-An unit to give the next imm_addr for program counter ;
+An unit to give the next inst_mem_addr for program counter ;
 
 An instruction decoder;
 
