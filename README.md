@@ -34,7 +34,7 @@ In this directory, it includes the verilog codes and verified testbench codes of
 
 The Simple CPU has and wiil have the following components:
 
-An Alu: for  + - & |;
+An alu: for  + - & |;
 
 A 32bit_Ripple adder;
 
@@ -46,7 +46,7 @@ An instruction decoder;
 
 An instrution memory for test : 32bit MIPS ISA;
 
-A Data memory(RAM): for sw and lw instructin;
+A data memory(RAM): for sw and lw instructin;
 
 A control unit;
 
