@@ -6,7 +6,7 @@
 `include "regfile.v"
 `include "regfile_v2.v"
 `include "Ram.v"
-module running (
+module core (
 clk,rst
 );
 input clk ,rst;

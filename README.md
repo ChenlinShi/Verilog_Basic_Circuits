@@ -32,7 +32,9 @@ There is a directory named "single_cycle_cpu", which is my attempt to design a s
 
 In this directory, it includes the verilog codes and verified testbench codes of each unit.
 
-The Simple CPU has and wiil have the following components:
+The "core.v" connects each file to compose the CPU, if you find any bad design or uncomprehensible parts, I will appericiate a message to point out my fault.
+
+The Simple CPU has the following components:
 
 An alu: for  + - & |;
 
@@ -50,7 +52,13 @@ A data memory(RAM): for sw and lw instructin;
 
 A control unit;
 
-...
+Two RegisterFile for using register, but the only the "v2" can work well;
+
+A bit_extension Unit for changing 16 bit imm to 32bit imm;
+
+A shifter for jump instruction, but it is intergrated in the control unit.
+
+
 
 
 

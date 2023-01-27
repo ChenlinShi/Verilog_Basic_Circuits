@@ -1,11 +1,11 @@
-module tb_running (
+module tb_core (
     
 );
 
 reg clk ,rst;
 
 
-running m1(clk,rst);
+core m1(clk,rst);
 
 initial begin
 clk=1;
