@@ -16,7 +16,7 @@ always @(posedge clk) begin
 
     if(~rst)begin
         for ( i=0 ;i<32 ;i++ ) begin
-            regarray[i]=0;
+            regarray[i]<=0;
         end
     end
     else  if(write) begin
