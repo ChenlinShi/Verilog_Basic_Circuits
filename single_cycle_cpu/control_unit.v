@@ -25,17 +25,17 @@ output [2:0]alu_func;
 output reg [4:0] rs,rt,rd;
 wire [3:0] case_test;
 wire [31:0] temp_imm;
+wire [2:0]tmp;
 
 
 
 assign case_test={ram_load,ram_write,jump,signal_extension};
-decoder dec(instruction[31:26],instruction[3:0],alu_func,ram_load,ram_write,jump,signal_extension);
+decoder dec(instruction[31:26],instruction[3:0],tmp,ram_load,ram_write,jump,signal_extension);
 ext ext_for_control_unit (instruction[15:0],temp_imm);
-
 // when ram_load or ram_write is true, assign ram_addr ,rt
 // when signal_extension is ture, assign imm,rs rt 
 // when jump is true, assign jump
-
+assign alu_func=(instruction)?tmp:0;
 always @(*) begin
    jump_offset<= 0 ; 
       //  regload<= 1 ;//always need get data from REGFILE

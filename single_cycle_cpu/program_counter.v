@@ -4,7 +4,9 @@ module program_counter (
 input   [31:0] current_addr_pc;
 input clk, rst;
 output reg [31:0]results_addr;  //cannot use current_addr as a output.
+// always @(posedge clk or posedge rst) begin
 always @(posedge clk or negedge rst) begin
+
     if (~rst) begin
       results_addr<=0; // reset.
     end
