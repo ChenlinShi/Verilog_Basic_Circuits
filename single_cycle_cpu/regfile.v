@@ -3,13 +3,16 @@ module regfile (
 );
 
 input [4:0] rs,rt,rd;
-input clk, rst,write;
+// input clk, rst;
+input  rst;
+input write;
 input [31:0]input_data;
 output reg [31:0]rs_data,rt_data;
 reg[31:0] regarray [31:0] ;
 integer i;
 
-always @(posedge clk or negedge rst) begin
+// always @(posedge clk or negedge rst) begin
+always @(*) begin
     if(~rst)begin
         for ( i=0 ;i<32 ;i++ ) begin
             regarray[i]<=0;

@@ -10,11 +10,13 @@ module control_unit (
  signal_extension,
  ram_addr,
  jump_offset
+//  regload
 );
 input [31:0] instruction;
 output reg [31:0]ram_addr; 
 output reg [15:0] jump_offset;
 output jump,signal_extension,ram_load,ram_write;
+// output reg regload;
 output reg [31:0]imm;
 output [2:0]alu_func;
 
@@ -35,14 +37,16 @@ ext ext_for_control_unit (instruction[15:0],temp_imm);
 // when jump is true, assign jump
 
 always @(*) begin
-    jump_offset<= 0 ; 
-     rs <= 0 ;
-     rt <= 0 ;
-     rd <= 0 ;// Other values do not affect the running
+   jump_offset<= 0 ; 
+      //  regload<= 1 ;//always need get data from REGFILE
+           rs <= 0 ;
+           rt <= 0 ;
+           rd <= 0 ;// Other values do not affect the running
   if( alu_func && ~signal_extension) begin
      rs <= instruction[25:21];
      rt <= instruction[20:16];
      rd <= instruction[15:11];
+    //  regload<=1;
   end
   else begin
     case (case_test)
