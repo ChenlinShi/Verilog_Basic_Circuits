@@ -15,12 +15,12 @@ input [31:0] instruction;
 output reg [31:0]ram_addr; 
 output reg [15:0] jump_offset;
 output jump,signal_extension,ram_load,ram_write;
-output reg [32:0]imm;
+output reg [31:0]imm;
 output [2:0]alu_func;
 
 // todo : rs rt rd  ram_addr, 
 
-output reg [5:0] rs,rt,rd;
+output reg [4:0] rs,rt,rd;
 wire [3:0] case_test;
 wire [31:0] temp_imm;
 
@@ -35,7 +35,10 @@ ext ext_for_control_unit (instruction[15:0],temp_imm);
 // when jump is true, assign jump
 
 always @(*) begin
-    jump_offset<=0;// Other values do not affect the running
+    jump_offset<= 0 ; 
+     rs <= 0 ;
+     rt <= 0 ;
+     rd <= 0 ;// Other values do not affect the running
   if( alu_func && ~signal_extension) begin
      rs <= instruction[25:21];
      rt <= instruction[20:16];
