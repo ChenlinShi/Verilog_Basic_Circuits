@@ -4,31 +4,41 @@ Basic circuits written in Verilog
 # Tools
 I use iverilog + gtkwave as the basic simulation for tesetbench, and DesignCompiler for synthesis.
 
-# Directory
+# Directory 
 The verilog codes in the "basic_circuits" directory are the basic training of coding, such as DFF, latch,multiplexer,etc.
+
+Files in "./synthesizable_verilog" are some a little complex deisgns selected to do logic synthesis based on DesignCompiler.
+
+Files in  "single_cycle_cpu" are  my attempt to design a simple CPU based on the information from internet. 
+
+Files in "./synthesizable_verilog" can be successfully synthesized with DesignCompiler version of R2020.
+
+File(s) in "./FSM"  is(are) the example(s) of FSM with testbench.
 
 # Testbench 
 Prefix "tb" means the testbench of corresponding design, almost every design has a verified testbench. Some test data in testbench is set for easy check, for serious verification, a random number is better.
 
 # Synthesizable_verilog
-Files in "./synthesizable_verilog" are some a little complex deisgns selected to do logic synthesis based on DesignCompiler.
 
-Each file in "./synthesizable_verilog" can be successfully synthesized with DesignCompiler version of R2020.
-
-PS: Some codes are changed slightly in structure in order to be implemented logic synthesis.
+Some codes are slightly changed in structure in order to be implemented logic synthesis.
 
 The cell library I use for Logic Synthesis is CNFET7, an Open-source cell library for carbon-nanotubes FET in 7nm node.
 
 URL:https://github.com/uec-hpc-lab/CNFET-OCL
 
 # Gate_netlist
-The gate netlist that DesignCompiler output,
-by using commmad:
+
+Each Gate_netlist is compiled and output by DesignCompiler with the following command.
 
 write -format verilog -output /path
 
+# Finite-State Machine
+
+May help you a little understand the FSM.
+
+Now the only example is a vending machine.
+
 # Single Cycle CPU
-There is a directory named "single_cycle_cpu", which is my attempt to design a simple CPU based on the information from internet. 
 
 In this directory, it includes the verilog codes and verified testbench codes of each unit.
 
@@ -50,7 +60,7 @@ An instrution memory for test : 32bit MIPS ISA;
 
 A data memory(RAM): for sw and lw instructin;
 
-A control unit;
+A control unit for using the decoder to give each unit signal ;
 
 Two RegisterFile for using register, but the only the "v2" can work well;
 
