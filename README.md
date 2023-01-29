@@ -4,8 +4,8 @@ Basic circuits written in Verilog
 # Tools
 I use iverilog + gtkwave as the basic simulation for tesetbench, and DesignCompiler for synthesis.
 
-# Root directory
-The verilog codes in the root directory are the basic training of coding, such as DFF, latch,multiplexer,etc.
+# Directory
+The verilog codes in the "basic_circuits" directory are the basic training of coding, such as DFF, latch,multiplexer,etc.
 
 # Testbench 
 Prefix "tb" means the testbench of corresponding design, almost every design has a verified testbench. Some test data in testbench is set for easy check, for serious verification, a random number is better.
