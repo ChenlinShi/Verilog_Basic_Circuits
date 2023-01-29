@@ -56,7 +56,9 @@ Two RegisterFile for using register, but the only the "v2" can work well;
 
 A bit_extension Unit for changing 16 bit imm to 32bit imm;
 
-A shifter for jump instruction, but it is intergrated in the control unit.
+A shifter for jump instruction, but it is intergrated in the control unit;
+
+Two or three Multiplexers intergrated in "core.v".
 
 
 
