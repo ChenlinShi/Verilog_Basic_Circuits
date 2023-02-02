@@ -12,8 +12,8 @@ reg[3:0]low_bit_sum;
 reg[3:0]high_bit_sum;
 always @(posedge enable  or negedge rst) begin
     if (~rst) begin
-     sum=0;
-     cout=0;   
+     sum<=0;
+     cout<=0;   
     end
     else begin
     {temp_cin,low_bit_sum}<=a[3:0]+b[3:0]+cin; 
