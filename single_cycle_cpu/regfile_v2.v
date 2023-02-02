@@ -12,7 +12,7 @@ reg [31:0] regarray [31:0];
 assign rs_data=regarray[rs];
 assign rt_data=regarray[rt];
 
-always @(posedge clk) begin
+always @(*) begin
 
     if(~rst)begin
         for ( i=0 ;i<32 ;i++ ) begin

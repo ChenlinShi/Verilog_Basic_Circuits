@@ -7,7 +7,7 @@ reg [31:0] ram [255:0];
 
 assign output_data=(load)?ram[ram_addr]:32'hzzzz;
 
-always @(posedge clk) begin
+always @(*) begin
     if (write) begin
         ram[ram_addr]<=input_data;
     end
