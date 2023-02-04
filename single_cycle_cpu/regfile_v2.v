@@ -14,6 +14,8 @@ assign rs_data=regarray[rs];
 assign rt_data=regarray[rt];
 
 always @(*) begin
+always @(*) begin
+
     if(~rst)begin
         for ( i=0 ;i<32 ;i=i+1 ) begin
             regarray[i]<=0;
