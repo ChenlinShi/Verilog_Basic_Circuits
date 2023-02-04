@@ -41,7 +41,7 @@ May help you a little understand the FSM.
 
 Now the only example is a vending machine.
 
-# Multipiler
+# Multiplier
 
 Now there is an example of 3-stage pipelined 8-bit multiplier.
 
