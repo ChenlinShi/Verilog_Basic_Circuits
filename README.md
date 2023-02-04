@@ -15,6 +15,9 @@ Files in "./synthesizable_verilog" can be successfully synthesized with DesignCo
 
 File(s) in "./FSM"  is(are) the example(s) of FSM with testbench.
 
+File(s) in "./multiplier"  is(are) the example(s) of multiplier with testbench.
+
+
 # Testbench 
 Prefix "tb" means the testbench of corresponding design, almost every design has a verified testbench. Some test data in testbench is set for easy check, for serious verification, a random number is better.
 
@@ -37,6 +40,10 @@ write -format verilog -output /path
 May help you a little understand the FSM.
 
 Now the only example is a vending machine.
+
+# Multipiler
+
+Now there is an example of 3-stage pipelined 8-bit multiplier.
 
 # Single Cycle CPU
 
