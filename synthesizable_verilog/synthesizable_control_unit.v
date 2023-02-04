@@ -30,7 +30,7 @@ wire [2:0]tmp;
 
 
 assign case_test={ram_load,ram_write,jump,signal_extension};
-decoder dec(instruction[31:26],instruction[3:0],tmp,ram_load,ram_write,jump,signal_extension);
+decoder dec(instruction[31:26],instruction[3:0],tmp,ram_load,ram_write,jump,signal_extension,clk);
 ext ext_for_control_unit (instruction[15:0],temp_imm);
 // when ram_load or ram_write is true, assign ram_addr ,rt
 // when signal_extension is ture, assign imm,rs rt 
@@ -64,11 +64,11 @@ end
 endmodule //control_unit
 
 module decoder (
-    op,func,alu_func,ram_load,ram_write,jump,imm_enable
+    op,func,alu_func,ram_load,ram_write,jump,imm_enable,clk
 );
 input [5:0]op;
 input [3:0]func;
-
+input clk;
 output reg [2:0]alu_func;
 output ram_write,ram_load,jump,imm_enable;
 reg ram_write_true, ram_load_true,jump_true,imm_enable_true;
@@ -98,7 +98,7 @@ assign jump_op  = ~op[5]&~op[4]&~op[3]&~op[2]&op[1]&~op[0];//000010
 assign r_case_test[4:0]={add,sub,and_op,or_op,slt};//for R type case
 assign case_test[6:0]={addi,andi,ori,slti,sw,lw,jump_op};//for other type case
 
-always @ (*) begin
+always @ (posedge clk) begin
     ram_write_true <=0; // before every new loop, set everyone to zero.
     jump_true      <=0; // before every new loop, set everyone to zero.
     ram_load_true  <=0; // before every new loop, set everyone to zero.
