@@ -2,7 +2,7 @@ module serial_multiplier (
     a,b,out
 );
 input [7:0] a,b;
-output reg [15:0] out;
+output  [15:0] out;
 // input clk , rst;
 
 
