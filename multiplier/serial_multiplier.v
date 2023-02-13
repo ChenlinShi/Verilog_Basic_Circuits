@@ -2,7 +2,7 @@ module serial_multiplier (
     a,b,out
 );
 input [7:0] a,b;
-output reg [15:0] out;
+output  [15:0] out;
 // input clk , rst;
 
 
@@ -38,10 +38,11 @@ assign bit_7_mux=(a[7])?{b,7'b0}:0;
 
 adder_16_bit_comb u0(bit_0_mux,bit_1_mux,cin,cout,bit_0_1_sum);
 adder_16_bit_comb u1(bit_0_1_sum,bit_2_mux,cin,cout,bit_1_2_sum);
-adder_16_bit_comb u2(bit_1_2_sum,bit_2_mux,cin,cout,bit_2_3_sum);
-adder_16_bit_comb u3(bit_2_3_sum,bit_2_mux,cin,cout,bit_3_4_sum);
-adder_16_bit_comb u4(bit_3_4_sum,bit_2_mux,cin,cout,bit_4_5_sum);
-adder_16_bit_comb u5(bit_4_5_sum,bit_2_mux,cin,cout,bit_6_7_sum);
+adder_16_bit_comb u2(bit_1_2_sum,bit_3_mux,cin,cout,bit_2_3_sum);
+adder_16_bit_comb u3(bit_2_3_sum,bit_4_mux,cin,cout,bit_3_4_sum);
+adder_16_bit_comb u4(bit_3_4_sum,bit_5_mux,cin,cout,bit_4_5_sum);
+adder_16_bit_comb u5(bit_4_5_sum,bit_6_mux,cin,cout,bit_6_7_sum);
+adder_16_bit_comb u6(bit_6_7_sum,bit_7_mux,cin,cout,out);
 
 
 
@@ -52,7 +53,7 @@ adder_16_bit_comb u5(bit_4_5_sum,bit_2_mux,cin,cout,bit_6_7_sum);
 // assign bit_4_5_sum=bit_3_4_sum+bit_5_mux;
 // assign bit_6_7_sum=bit_4_5_sum+bit_6_mux;
 
-assign out= bit_6_7_sum+bit_7_mux;
+// assign out= bit_6_7_sum+bit_7_mux;
 
 
 endmodule //serial_multiplier
@@ -63,7 +64,7 @@ a,b,cin,cout,sum
 
 input [15:0] a,b;
 input cin;
-output  reg cout;
+output  cout;
 output [15:0] sum;
 
 assign {cout,sum}=a+b+cin;
