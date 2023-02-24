@@ -1,5 +1,5 @@
 $date
-	Fri Feb 24 23:13:27 2023
+	Fri Feb 24 23:30:08 2023
 $end
 $version
 	Icarus Verilog
@@ -8,31 +8,31 @@ $timescale
 	1s
 $end
 $scope module tb_lca_bitadder $end
-$var wire 8 ! sum [7:0] $end
+$var wire 64 ! sum [63:0] $end
 $var wire 1 " cout $end
-$var reg 8 # a [7:0] $end
-$var reg 8 $ b [7:0] $end
+$var reg 64 # a [63:0] $end
+$var reg 64 $ b [63:0] $end
 $var reg 1 % cin $end
 $var reg 1 & clk $end
 $var reg 1 ' rst $end
 $scope module lca $end
-$var wire 8 ( a [7:0] $end
-$var wire 8 ) b [7:0] $end
+$var wire 64 ( a [63:0] $end
+$var wire 64 ) b [63:0] $end
 $var wire 1 % cin $end
 $var wire 1 & clk $end
 $var wire 1 * cout $end
 $var wire 1 ' rst $end
-$var wire 8 + sum [7:0] $end
-$var wire 8 , p [7:0] $end
-$var wire 8 - g [7:0] $end
-$var wire 8 . c [7:0] $end
+$var wire 64 + sum [63:0] $end
+$var wire 64 , p [63:0] $end
+$var wire 64 - g [63:0] $end
+$var wire 64 . c [63:0] $end
 $var reg 1 " cout_r $end
-$var reg 8 / sum_r [7:0] $end
+$var reg 64 / sum_r [63:0] $end
 $scope module u0 $end
-$var wire 8 0 a [7:0] $end
-$var wire 8 1 b [7:0] $end
-$var wire 8 2 g [7:0] $end
-$var wire 8 3 p [7:0] $end
+$var wire 64 0 a [63:0] $end
+$var wire 64 1 b [63:0] $end
+$var wire 64 2 g [63:0] $end
+$var wire 64 3 p [63:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -81,8 +81,8 @@ b10 0
 0"
 b111 !
 b111 /
-b10 .
 b10 +
+b10 .
 b0 ,
 b0 3
 b1 -
@@ -97,8 +97,8 @@ b1 0
 #40
 0&
 #50
-b11 !
-b11 /
+b10 !
+b10 /
 b101001 +
 b10100 -
 b10100 2
@@ -130,14 +130,13 @@ b1001011 0
 #80
 0&
 #90
-b10010110 !
-b10010110 /
-1*
-b0 +
+b10010111 !
+b10010111 /
+b100000000 +
 b10000000 -
 b10000000 2
 1&
-b0 .
+b100000000 .
 0%
 b10000000 $
 b10000000 )
@@ -148,11 +147,10 @@ b10000000 0
 #100
 0&
 #110
-1"
-b0 !
-b0 /
-0*
+b100000000 !
+b100000000 /
 b11011100 +
+b0 .
 b11011100 ,
 b11011100 3
 b0 -
@@ -167,7 +165,6 @@ b11001000 0
 #120
 0&
 #130
-0"
 b11011100 !
 b11011100 /
 1&
