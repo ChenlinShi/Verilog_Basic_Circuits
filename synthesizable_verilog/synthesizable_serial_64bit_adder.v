@@ -1,5 +1,5 @@
 module serial_adder_64bit (
-    a,b,cin,cout,sum,clk,rst
+    a,b,cin,cout_r,sum_r,clk,rst
 );
 input [63:0]a,b;
 input cin,clk,rst;
@@ -26,6 +26,7 @@ always @(posedge clk or negedge rst) begin
     else begin
         sum_r<=sum;
         cout_r<=cout;
+end
 end
 
 endmodule //serial_adder_64bit
