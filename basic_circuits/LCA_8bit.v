@@ -1,15 +1,16 @@
 module LCA_8bit (
-    a,b,cin,cout,sum
+    a,b,cin,cout_r,sum_r,clk,rst
 );
 input [7:0]a,b;
-input cin;
+input cin,clk,rst;
 
-output [7:0]sum;
-output cout;
+output reg [7:0]sum_r;
+output reg cout_r;
 
 wire [7:0] p;
 wire [7:0] g;
-
+wire [7:0] sum;
+wire cout;
 wire [7:0] c;
 
 pg_gen pg0 (.a(a[0]),.b(b[0]),.p(p[0]),.g(g[0]));
@@ -43,6 +44,17 @@ assign sum[5] = p[5]^c[5]; //sum 5th bit
 assign sum[6] = p[6]^c[6]; //sum 6th bit
 assign sum[7] = p[7]^c[7]; //sum 7th bit
 
+always @(posedge clk or negedge rst) begin
+   if (~rst) begin
+        sum_r<=0;
+        cout_r<=0;
+   end
+   else begin
+        sum_r<=sum;
+        cout_r<=cout;
+   end
+         
+end
 endmodule //LCA_8bit
 
 module pg_gen (
