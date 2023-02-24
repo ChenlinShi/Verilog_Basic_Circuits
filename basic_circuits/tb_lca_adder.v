@@ -3,20 +3,20 @@ module tb_lca_bitadder ();
 reg [7:0] a,b;
 output [7:0] sum;
 output  cout;
-// reg rst,clk;
+reg rst,clk;
 reg cin;
-parameter delay=10; 
-LCA_8bit lca (a,b,cin,cout,sum
+parameter delay=20; 
+LCA_8bit lca (a,b,cin,cout,sum,clk,rst
 );
 initial begin
    $dumpfile("dump.vcd"); 
    $dumpvars;
 end
 
-// initial begin
-//   clk=0;
-//      forever #10 clk = ~clk;  
-// end 
+initial begin
+  clk=0;
+     forever #10 clk = ~clk;  
+end 
 initial begin                                                  
 #10   a=2;b=5;cin=1'b0;             
 #delay a=1;b=1;
