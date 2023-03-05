@@ -1,9 +1,9 @@
 module Conditional_sum_adder_8bit (
-    a,b,cin,sum_r,cout_r,clk
+    a,b,cin,sum_r,cout_r,clk,rst
 );
 
 input [7:0]a,b;
-input cin;
+input cin,clk,rst;
 output reg [7:0]sum_r;
 output reg cout_r;
 
@@ -16,12 +16,14 @@ CSelectAdder_4bit cs1(a[3:0],b[3:0],cin,sum[3:0],cout_first);
 CSelectAdder_4bit cs2(a[7:4],b[7:4],cout_first,sum[7:4],cout);
 
 always @(posedge clk ) begin
-    if(rst)
+    if(rst) begin
         sum_r <= 8'b0;
         cout_r <= 1'b0;
-    else
+    end
+    else begin
         sum_r <= sum;
         cout_r <= cout;
+    end
 end
 
 endmodule //Conditional_sum_adder_8bit
