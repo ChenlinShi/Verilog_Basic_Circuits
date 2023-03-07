@@ -4,7 +4,7 @@ module Con_sa_64 (
 input [63:0]a,b;
 input cin,clk,rst;
 output reg [63:0]sum_r;
-output reg cout;
+output reg cout_r;
 
 wire [6:0]bit_carry;
 wire  [63:0] sum;
