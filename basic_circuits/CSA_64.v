@@ -55,7 +55,7 @@ always @(posedge clk or negedge rst) begin
     end
     else begin
         sum <= s2;
-        cout <= c2[62];
+        cout <= c2[62]|c1[63];
     end
 end
 

@@ -37,7 +37,7 @@ always @(posedge clk or negedge rst) begin
     end
     else begin
         sum<=s2;
-        cout<=c2[6];
+        cout<=c2[6]|c1[7];
 end
 end
 endmodule //CSA_8bit
