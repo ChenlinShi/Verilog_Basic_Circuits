@@ -150,8 +150,8 @@ multiplexer mul_sum_13 (sum_1[13],sum_2[13],cin,sum[13]);
 multiplexer mul_sum_14 (sum_1[14],sum_2[14],cin,sum[14]);
 multiplexer mul_sum_15 (sum_1[15],sum_2[15],cin,sum[15]);
 
-// multiplexer mul_1(bit_carry[15],bit_carry_1[15],cin,cout);
-assign cout=bit_carry[15] | bit_carry_1[15];
+multiplexer mul_1(bit_carry[15],bit_carry_1[15],cin,cout);
+// assign cout= bit_carry[15] | bit_carry_1[15];
 
 endmodule //CSelectAdder_4bit
 
