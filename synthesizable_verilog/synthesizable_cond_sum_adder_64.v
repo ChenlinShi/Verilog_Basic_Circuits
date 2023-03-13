@@ -5,12 +5,12 @@ input [63:0]a,b;
 input cin,clk,rst;
 output reg [63:0]sum_r;
 output reg cout_r;
-
+reg cin_r;
 wire [6:0]bit_carry;
 wire  [63:0] sum;
 wire cout;
 
-Conditional_sum_adder_8bit cs1(a[7:0],b[7:0],cin,sum[7:0],bit_carry[0]);
+Conditional_sum_adder_8bit cs1(a[7:0],b[7:0],cin_r,sum[7:0],bit_carry[0]);
 Conditional_sum_adder_8bit cs2(a[15:8],b[15:8],bit_carry[0],sum[15:8],bit_carry[1]);
 Conditional_sum_adder_8bit cs3(a[23:16],b[23:16],bit_carry[1],sum[23:16],bit_carry[2]);
 Conditional_sum_adder_8bit cs4(a[31:24],b[31:24],bit_carry[2],sum[31:24],bit_carry[3]);
@@ -23,10 +23,12 @@ always @(posedge clk ) begin
     if(rst) begin
         sum_r<=0;
         cout_r<=0;
+        cin_r<=0;
     end
     else begin
         sum_r<=sum;
         cout_r<=cout;
+        cin_r<=cin;
     end
 end
 
