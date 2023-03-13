@@ -6,7 +6,8 @@ wire  cout;
 reg rst,clk;
 reg cin;
 parameter delay=20; 
-CLA_v2_64 CLA(
+
+top_16_64 CLA(
     a,b,cin,sum,cout,clk,rst
 );
 
