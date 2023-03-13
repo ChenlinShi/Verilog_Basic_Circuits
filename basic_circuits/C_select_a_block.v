@@ -44,8 +44,26 @@ ADD_full adder_1_14(bit_carry_1[13],sum_2[13],a[13],b[13],bit_carry_1[12]);
 ADD_full adder_1_15(bit_carry_1[14],sum_2[14],a[14],b[14],bit_carry_1[13]);
 ADD_full adder_1_16(bit_carry_1[15],sum_2[15],a[15],b[15],bit_carry_1[14]);
 
-multiplexer_16_bit mul_16(sum_1,sum_2,cin,sum);
+// multiplexer_16_bit mul_16(sum_1,sum_2,cin,sum);
+multiplexer mul_sum_0 (sum_1[0],sum_2[0],cin,sum[0]);
+multiplexer mul_sum_1 (sum_1[1],sum_2[1],cin,sum[1]);
+multiplexer mul_sum_2 (sum_1[2],sum_2[2],cin,sum[2]);
+multiplexer mul_sum_3 (sum_1[3],sum_2[3],cin,sum[3]);
+multiplexer mul_sum_4 (sum_1[4],sum_2[4],cin,sum[4]);
+multiplexer mul_sum_5 (sum_1[5],sum_2[5],cin,sum[5]);
+multiplexer mul_sum_6 (sum_1[6],sum_2[6],cin,sum[6]);
+multiplexer mul_sum_7 (sum_1[7],sum_2[7],cin,sum[7]);
+multiplexer mul_sum_8 (sum_1[8],sum_2[8],cin,sum[8]);
+multiplexer mul_sum_9 (sum_1[9],sum_2[9],cin,sum[9]);
+multiplexer mul_sum_10 (sum_1[10],sum_2[10],cin,sum[10]);
+multiplexer mul_sum_11 (sum_1[11],sum_2[11],cin,sum[11]);
+multiplexer mul_sum_12 (sum_1[12],sum_2[12],cin,sum[12]);
+multiplexer mul_sum_13 (sum_1[13],sum_2[13],cin,sum[13]);
+multiplexer mul_sum_14 (sum_1[14],sum_2[14],cin,sum[14]);
+multiplexer mul_sum_15 (sum_1[15],sum_2[15],cin,sum[15]);
+
 multiplexer mul_1(bit_carry[15],bit_carry_1[15],cin,cout);
+
 endmodule //CSelectAdder_4bit
 
 module CSelectAdder_8bit ( a,b,cin,sum,cout);
@@ -75,7 +93,16 @@ ADD_full adder_1_6(bit_carry_1[5],sum_2[5],a[5],b[5],bit_carry_1[4]);
 ADD_full adder_1_7(bit_carry_1[6],sum_2[6],a[6],b[6],bit_carry_1[5]);
 ADD_full adder_1_8(bit_carry_1[7],sum_2[7],a[7],b[7],bit_carry_1[6]);
 
-multiplexer_8_bit mul_8(sum_1,sum_2,cin,sum);
+// multiplexer_8_bit mul_8(sum_1,sum_2,cin,sum);
+multiplexer mul_sum_0 (sum_1[0],sum_2[0],cin,sum[0]);
+multiplexer mul_sum_1 (sum_1[1],sum_2[1],cin,sum[1]);
+multiplexer mul_sum_2 (sum_1[2],sum_2[2],cin,sum[2]);
+multiplexer mul_sum_3 (sum_1[3],sum_2[3],cin,sum[3]);
+multiplexer mul_sum_4 (sum_1[4],sum_2[4],cin,sum[4]);
+multiplexer mul_sum_5 (sum_1[5],sum_2[5],cin,sum[5]);
+multiplexer mul_sum_6 (sum_1[6],sum_2[6],cin,sum[6]);
+multiplexer mul_sum_7 (sum_1[7],sum_2[7],cin,sum[7]);
+
 multiplexer mul_1(bit_carry[7],bit_carry_1[7],cin,cout);
 endmodule //CSelectAdder_4bit
 
