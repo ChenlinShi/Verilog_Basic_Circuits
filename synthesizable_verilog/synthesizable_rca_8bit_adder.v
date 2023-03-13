@@ -12,7 +12,7 @@ input cin,clk,rst;
 output  reg cout_r;
 output   reg [7:0]sum_r;
 wire [6:0]bit_carry;
-
+reg cin_r;
 wire cout;
 wire [7:0] sum;
 // wire [7:0] a,b,a_bar,b_bar;
@@ -24,7 +24,7 @@ wire [7:0] sum;
 //     b,b_bar,b,clk,rst
 // );
 
-ADD_full u0(bit_carry[0],sum[0],a[0],b[0],cin);
+ADD_full u0(bit_carry[0],sum[0],a[0],b[0],cin_r);
 ADD_full u1(bit_carry[1],sum[1],a[1],b[1],bit_carry[0]);
 ADD_full u2(bit_carry[2],sum[2],a[2],b[2],bit_carry[1]);
 ADD_full u3(bit_carry[3],sum[3],a[3],b[3],bit_carry[2]);
@@ -37,10 +37,12 @@ always @(posedge clk or negedge rst) begin
     if (~rst)begin
        sum_r<=0;
        cout_r<=0;
+        cin_r<=0;
        end
     else begin
         sum_r<=sum;
         cout_r<=cout;
+        cin_r<=cin;
     end
 end
 
