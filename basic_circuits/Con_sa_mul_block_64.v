@@ -1,6 +1,6 @@
-`include "./C_select_a_block.v";
+// `include "./C_select_a_block.v";
 
-module top_16block (a,b,cin,sum,cout,clk,rst);
+module top_16block (a,b,cin,sum_r,cout_r,clk,rst);
 
 input [63:0]a,b;
 input cin,clk,rst;
@@ -24,7 +24,7 @@ always @(posedge clk ) begin
 end
 endmodule
 
-module top_8block (a,b,cin,sum,cout,clk,rst);
+module top_8block (a,b,cin,sum_r,cout_r,clk,rst);
 
 input [63:0]a,b;
 input cin,clk,rst;

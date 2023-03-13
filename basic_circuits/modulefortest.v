@@ -65,3 +65,14 @@ always @(posedge clk ) begin
      end   
 end
 endmodule 
+
+module  multiplexer_4_bit_1 (a,b,sel,out
+);
+
+input [3:0]a,b;
+input sel;
+output [3:0]out;
+assign out= (sel)?a:b;
+
+
+endmodule 
