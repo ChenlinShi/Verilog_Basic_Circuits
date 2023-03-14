@@ -48,6 +48,14 @@ CLAv2_8bit u0 (a,b,1'b0,s0,cout_0);
 CLAv2_8bit u1 (a,b,1'b1,s1,cout_1);
 
 multiplexer_8_bit  sum_mul(s1,s0,cin,sum);
+// mux_1bit_nand sum_0_mul(cin,s0[0],s1[0],sum[0]);
+// mux_1bit_nand sum_1_mul(cin,s0[1],s1[1],sum[1]);
+// mux_1bit_nand sum_2_mul(cin,s0[2],s1[2],sum[2]);
+// mux_1bit_nand sum_3_mul(cin,s0[3],s1[3],sum[3]);
+// mux_1bit_nand sum_4_mul(cin,s0[4],s1[4],sum[4]);
+// mux_1bit_nand sum_5_mul(cin,s0[5],s1[5],sum[5]);
+// mux_1bit_nand sum_6_mul(cin,s0[6],s1[6],sum[6]);
+// mux_1bit_nand sum_7_mul(cin,s0[7],s1[7],sum[7]);
 
 // assign cout = (~cin&cout_1 )|(cin &cout_0);
 mux_1bit_nand cout_mul(cin,cout_0,cout_1,cout);
