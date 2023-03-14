@@ -50,6 +50,7 @@ CLAv2_8bit u1 (a,b,1'b1,s1,cout_1);
 multiplexer_8_bit  sum_mul(s1,s0,cin,sum);
 
 assign cout = (~cin&cout_1 )|(cin &cout_0);
+// multiplexer cout_mul(cout_1,cout_0,cin,cout);
 
 endmodule //C_Select_adder_withCLA.block
 
@@ -111,10 +112,10 @@ assign out= (sel)?a:b;
 
 endmodule 
 
-// module multiplexer (a,b,sel,out);
+module multiplexer (a,b,sel,out);
 
-// input a,b;
-// input sel;
-// output out;
-// assign out = sel?a:b;
-// endmodule
+input a,b;
+input sel;
+output out;
+assign out = sel?a:b;
+endmodule
