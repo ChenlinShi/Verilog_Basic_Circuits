@@ -1,7 +1,7 @@
 module t_mux();
-wire mux_out;
+wire out;
 reg a, b,sel;
-  multiplexer M1(mux_out,sel,a,b);
+   mux_1bit_nand M1(sel,a,b,out);
  initial begin
    $dumpfile("dump.vcd"); 
    $dumpvars;
@@ -11,6 +11,8 @@ initial begin
 end
 initial begin
     #10 a=0 ;b=1;sel=1;
+    #10 sel=0;
+    #10 a=1 ;b=0;sel=1;
     #10 sel=0;
  
 end
