@@ -7,7 +7,7 @@ output  cout;
 reg cin;
 parameter delay=20; 
 
-CSelectAdder_8bit csa(
+C_Select_adder_with_CLA_block_8bit csa(
     a,b,cin,sum,cout
 );
 initial begin
